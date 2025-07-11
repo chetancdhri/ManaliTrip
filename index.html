@@ -957,6 +957,198 @@
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
         }
 
+         /* Hotels Section */
+    .hotels {
+        background: var(--dark);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hotels::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="%231A1A2E" width="50" height="50" x="25" y="25"/></svg>');
+        background-size: 50px;
+        opacity: 0.05;
+        z-index: 0;
+    }
+
+    .hotel-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .hotel-category {
+        margin-bottom: 60px;
+        opacity: 0;
+        transform: translateY(30px);
+        transition: var(--transition);
+    }
+
+    .hotel-category.in-view {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .hotel-category:nth-child(1) { transition-delay: 0.2s; }
+    .hotel-category:nth-child(2) { transition-delay: 0.4s; }
+    .hotel-category:nth-child(3) { transition-delay: 0.6s; }
+    .hotel-category:nth-child(4) { transition-delay: 0.8s; }
+
+    .hotel-location {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+        color: var(--light);
+        font-family: 'Montserrat', sans-serif;
+        display: flex;
+        align-items: center;
+        position: relative;
+        padding-left: 50px;
+    }
+
+    .hotel-location i {
+        position: absolute;
+        left: 0;
+        font-size: 1.5rem;
+        width: 40px;
+        height: 40px;
+        background: linear-gradient(to right, var(--primary), var(--secondary));
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--light);
+    }
+
+    .hotel-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 30px;
+    }
+
+    .hotel-card {
+        background: var(--dark-secondary);
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        transition: var(--transition);
+        position: relative;
+        z-index: 1;
+    }
+
+    .hotel-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+    }
+
+    .hotel-image {
+        height: 200px;
+        overflow: hidden;
+    }
+
+    .hotel-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: var(--transition);
+    }
+
+    .hotel-card:hover .hotel-image img {
+        transform: scale(1.1);
+    }
+
+    .hotel-info {
+        padding: 20px;
+    }
+
+    .hotel-info h4 {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+        color: var(--light);
+        font-family: 'Montserrat', sans-serif;
+        transition: var(--transition);
+    }
+
+    .hotel-card:hover .hotel-info h4 {
+        color: var(--primary);
+    }
+
+    .hotel-rating {
+        margin-bottom: 10px;
+        color: var(--accent);
+    }
+
+    .hotel-rating i {
+        margin-right: 3px;
+    }
+
+    .hotel-rating span {
+        margin-left: 10px;
+        color: var(--gray);
+        font-size: 0.9rem;
+    }
+
+    .hotel-description {
+        color: var(--gray);
+        margin-bottom: 15px;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        transition: var(--transition);
+    }
+
+    .hotel-card:hover .hotel-description {
+        color: var(--light);
+    }
+
+    .hotel-features {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    .hotel-features span {
+        background: rgba(30, 30, 62, 0.7);
+        padding: 5px 10px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        color: var(--gray);
+        display: flex;
+        align-items: center;
+        transition: var(--transition);
+    }
+
+    .hotel-features i {
+        margin-right: 5px;
+        font-size: 0.8rem;
+        color: var(--primary);
+        transition: var(--transition);
+    }
+
+    .hotel-card:hover .hotel-features span {
+        background: rgba(255, 107, 107, 0.1);
+        color: var(--light);
+    }
+
+    .hotel-card:hover .hotel-features i {
+        color: var(--secondary);
+    }
+
+    @media (max-width: 768px) {
+        .hotel-cards {
+            grid-template-columns: 1fr;
+        }
+        
+        .hotel-location {
+            font-size: 1.5rem;
+        }
+    }
+
         /* Packages Section - Enhanced */
         .packages {
             text-align: center;
@@ -2243,6 +2435,249 @@
         </div>
     </section>
 
+
+    
+<!-- Hotels Section -->
+<section class="section hotels" id="hotels">
+    <div class="section-title">
+        <h2>Our <span>Hotels</span></h2>
+        <p>Comfortable accommodations at each destination during your journey</p>
+    </div>
+    
+    <div class="hotel-container">
+        <!-- Manali Hotels -->
+        <div class="hotel-category">
+            <h3 class="hotel-location"><i class="fas fa-mountain"></i> Manali</h3>
+            <div class="hotel-cards">
+                <div class="hotel-card">
+                    <div class="hotel-image">
+                        <img src="https://pix8.agoda.net/hotelImages/163/1636904/1636904_17011219000050285285.jpg?ca=6&ce=1&s=1024x" alt="Grace Resort">
+                    </div>
+                    <div class="hotel-info">
+                        <h4>Grace Resort</h4>
+                        <div class="hotel-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.5/5</span>
+                        </div>
+                        <p class="hotel-description">Luxurious resort with mountain views and modern amenities near Mall Road.</p>
+                        <div class="hotel-features">
+                            <span><i class="fas fa-wifi"></i> Free WiFi</span>
+                            <span><i class="fas fa-utensils"></i> Restaurant</span>
+                            <span><i class="fas fa-snowflake"></i> Heating</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hotel-card">
+                    <div class="hotel-image">
+                        <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/685208797.jpg?k=efd9c52f5b8bd37dcc5ccdd48c3711b2cadd67845facfd1d1537f69857138ac6&o=" alt="Hill River Resort">
+                    </div>
+                    <div class="hotel-info">
+                        <h4>Hill River Resort</h4>
+                        <div class="hotel-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>4/5</span>
+                        </div>
+                        <p class="hotel-description">Riverside property with cozy rooms and beautiful valley views.</p>
+                        <div class="hotel-features">
+                            <span><i class="fas fa-swimming-pool"></i> Pool</span>
+                            <span><i class="fas fa-spa"></i> Spa</span>
+                            <span><i class="fas fa-parking"></i> Parking</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hotel-card">
+                    <div class="hotel-image">
+                        <img src="https://pix8.agoda.net/hotelImages/552041/-1/b6d789ddaa14ac789b0cee1c1b2cb86a.jpg?ce=0&s=1024x" alt="Victory Resort">
+                    </div>
+                    <div class="hotel-info">
+                        <h4>Victory Resort</h4>
+                        <div class="hotel-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>5/5</span>
+                        </div>
+                        <p class="hotel-description">Premium resort with excellent service and proximity to adventure spots.</p>
+                        <div class="hotel-features">
+                            <span><i class="fas fa-fire"></i> Bonfire</span>
+                            <span><i class="fas fa-hiking"></i> Trekking</span>
+                            <span><i class="fas fa-umbrella-beach"></i> Garden</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Shimla Hotels -->
+        <div class="hotel-category">
+            <h3 class="hotel-location"><i class="fas fa-snowflake"></i> Shimla</h3>
+            <div class="hotel-cards">
+                <div class="hotel-card">
+                    <div class="hotel-image">
+                        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/24/91/1c/larisa-resort-shimla.jpg?w=1400&h=-1&s=1" alt="8 Fold by Larisa">
+                    </div>
+                    <div class="hotel-info">
+                        <h4>8 Fold by Larisa</h4>
+                        <div class="hotel-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.5/5</span>
+                        </div>
+                        <p class="hotel-description">Boutique hotel with colonial charm and modern comforts.</p>
+                        <div class="hotel-features">
+                            <span><i class="fas fa-coffee"></i> Breakfast</span>
+                            <span><i class="fas fa-snowman"></i> Snow View</span>
+                            <span><i class="fas fa-walking"></i> Mall Road</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hotel-card">
+                    <div class="hotel-image">
+                        <img src="https://cdn0.weddingwire.in/vendor/7341/3_2/960/jpg/gw_15_217341-1563437069.webp" alt="Euphoria Grand">
+                    </div>
+                    <div class="hotel-info">
+                        <h4>Euphoria Grand</h4>
+                        <div class="hotel-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>4/5</span>
+                        </div>
+                        <p class="hotel-description">Grand hotel with panoramic views and excellent dining options.</p>
+                        <div class="hotel-features">
+                            <span><i class="fas fa-tv"></i> TV</span>
+                            <span><i class="fas fa-concierge-bell"></i> Room Service</span>
+                            <span><i class="fas fa-child"></i> Kids Area</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hotel-card">
+                    <div class="hotel-image">
+                        <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/529253407.jpg?k=dc8b1db9150382cf8d89853870c2aeb46a4effa536f5492dcdf4df61a60670b6&o=" alt="Grand White">
+                    </div>
+                    <div class="hotel-info">
+                        <h4>Grand White</h4>
+                        <div class="hotel-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>5/5</span>
+                        </div>
+                        <p class="hotel-description">Luxury accommodation with premium amenities and mountain views.</p>
+                        <div class="hotel-features">
+                            <span><i class="fas fa-hot-tub"></i> Hot Tub</span>
+                            <span><i class="fas fa-dumbbell"></i> Gym</span>
+                            <span><i class="fas fa-cocktail"></i> Bar</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Kasol Hotels -->
+        <div class="hotel-category">
+            <h3 class="hotel-location"><i class="fas fa-campground"></i> Kasol</h3>
+            <div class="hotel-cards">
+                <div class="hotel-card">
+                    <div class="hotel-image">
+                        <img src="https://images.jdmagicbox.com/v2/comp/kullu/j3/9999p1902.1902.210821010621.t1j3/catalogue/kasol-adventure-camp-neoli-kullu-camp-organisers-sox0mhcvag.jpg" alt="Kasol Adventure Camp">
+                    </div>
+                    <div class="hotel-info">
+                        <h4>Kasol Adventure Camp</h4>
+                        <div class="hotel-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>4.5/5</span>
+                        </div>
+                        <p class="hotel-description">Riverside camping experience with bonfire and adventure activities.</p>
+                        <div class="hotel-features">
+                            <span><i class="fas fa-fire"></i> Bonfire</span>
+                            <span><i class="fas fa-water"></i> Riverside</span>
+                            <span><i class="fas fa-hiking"></i> Trekking</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Amritsar Hotels -->
+        <div class="hotel-category">
+            <h3 class="hotel-location"><i class="fas fa-landmark"></i> Amritsar</h3>
+            <div class="hotel-cards">
+                <div class="hotel-card">
+                    <div class="hotel-image">
+                        <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/478476653.jpg?k=97a8520382679ee2f715abee91850dfeb1afb6b2eb44a60f8d06c86f13bfe5bd&o=" alt="Hotel Escala">
+                    </div>
+                    <div class="hotel-info">
+                        <h4>Hotel Escala</h4>
+                        <div class="hotel-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                            <span>4/5</span>
+                        </div>
+                        <p class="hotel-description">Modern hotel with comfortable rooms near Golden Temple.</p>
+                        <div class="hotel-features">
+                            <span><i class="fas fa-utensils"></i> Restaurant</span>
+                            <span><i class="fas fa-wifi"></i> Free WiFi</span>
+                            <span><i class="fas fa-swimming-pool"></i> Pool</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hotel-card">
+                    <div class="hotel-image">
+                        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/26/61/27/35/front-of-hotels.jpg?w=1400&h=800&s=1" alt="Hotel Grand Cabanna">
+                    </div>
+                    <div class="hotel-info">
+                        <h4>Hotel Grand Cabanna</h4>
+                        <div class="hotel-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>5/5</span>
+                        </div>
+                        <p class="hotel-description">Luxury accommodation with premium services and amenities.</p>
+                        <div class="hotel-features">
+                            <span><i class="fas fa-spa"></i> Spa</span>
+                            <span><i class="fas fa-dumbbell"></i> Gym</span>
+                            <span><i class="fas fa-concierge-bell"></i> 24/7 Service</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
     <!-- Packages Section -->
     <section class="section packages" id="packages">
         <div class="section-title">
@@ -2669,6 +3104,19 @@
                 }
             });
         });
+
+         // Observe hotel categories
+    const hotelObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.hotel-category').forEach(category => {
+        hotelObserver.observe(category);
+    });
     </script>
 </body>
 </html>
