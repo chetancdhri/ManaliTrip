@@ -2191,10 +2191,7 @@
     </style>
 </head>
 <body>
-    <!-- Preloader -->
-    <div class="preloader">
-        <div class="loader"></div>
-    </div>
+   
 
     <!-- Header -->
     <header>
@@ -2896,17 +2893,6 @@
     </div>
 
     <script>
-        // Preloader
-        window.addEventListener('load', function() {
-            const preloader = document.querySelector('.preloader');
-            setTimeout(() => {
-                preloader.classList.add('fade-out');
-                setTimeout(() => {
-                    preloader.style.display = 'none';
-                }, 500);
-            }, 1500); // Longer preloader for demo purposes
-        });
-
         // Mobile Menu Toggle
         const menuToggle = document.querySelector('.menu-toggle');
         const navLinks = document.querySelector('.nav-links');
